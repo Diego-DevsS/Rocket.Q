@@ -14,7 +14,7 @@ html {
     --blue: #3485FF;
     --background: #FBFCFF;
     --overlay: #040911;
-    --details-icon: #040911;
+    --icon-details: #A5B0C1;
     
     --gray-dark: #4D5E77;
     --gray-blue: #A1B2CD;
@@ -26,12 +26,13 @@ html {
     font-size: 62.5%; /* 10px */
 }
 body {
+    display: flex;
     height: 100vh;
     background: var(--background);
 }
 
 body, button, input, textarea {
-    font-size: calmp(14px, 1.6rem, 2vw);
+    font-size: clamp(14px, 1.6rem, 2vw);
     font-family: 'Open-Sans', sans-serif;
     font-family: 'Poppins', sans-serif;
 }
