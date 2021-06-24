@@ -19,6 +19,7 @@ html {
     --gray-dark: #4D5E77;
     --gray-blue: #A1B2CD;
     --gray-light: #E5EAF1;
+    --gray-medium: #eaecf2;
 
     --hover-blue: #5699FF;
     --hover-red: #EA4B65;
@@ -87,6 +88,16 @@ button.outLined, .button.outLined {
     background-color: var(--white);
     color: var(--blue);
     border: .2rem solid var(--blue);
+}
+
+button.red, .button.red {
+    background: var(--red);
+    color: var(--white);
+
+}
+button.gray, .button.gray {
+    background: var(--gray-light);
+    color: var(--gray-dark)
 }
 
 .content header {
