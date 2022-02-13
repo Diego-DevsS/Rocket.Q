@@ -1,0 +1,27 @@
+{
+  "name": "rocket.q",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diego-DevsS/Rocket.Q.git"
+  },
+  "keywords": [],
+  "author": "Diego Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diego-DevsS/Rocket.Q/issues"
+  },
+  "homepage": "https://github.com/Diego-DevsS/Rocket.Q#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

@@ -1,0 +1,2 @@
+- [] Implementar o banco de dados com SQLite
+- [] Aula 04 - 2:44:05
