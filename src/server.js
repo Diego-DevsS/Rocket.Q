@@ -14,4 +14,4 @@ server.use(express.urlencoded({extended: true}))
 
 server.use(route)
 
-server.listen(3000, () => console.log("runing..."))
+server.listen(3000, () => console.log("server started..."))

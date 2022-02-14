@@ -8,7 +8,6 @@ const modalButton = document.querySelector(".modal button")
 
 const checkButtons = document.querySelectorAll(".actions a.check")
 
-
 checkButtons.forEach(button => {
   button.addEventListener('click', hendelClick)
 })
