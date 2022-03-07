@@ -1,6 +1,0 @@
-- [] Implementar o banco de dados com SQLite
-- [] Aula 04 - 2:44:05
-
-Shell Command: Install 'code' command in PATH command
-
-Install code

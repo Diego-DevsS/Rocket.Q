@@ -11,7 +11,7 @@ export default function Modal () {
 
   function close () {
     // fechar modal
-    modalWroper.classList.remove("active")
+    modalWropper.classList.remove("active")
   }
 
   return {
