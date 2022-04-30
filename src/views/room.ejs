@@ -25,11 +25,11 @@
                 </a>
 
                 <div class="buttons">
-                    <div class="button outLined" id="room-id" data-id="159357">
-                        #159357
+                    <div class="button outLined" id="room-id" data-id="<%= roomId %>">
+                        #<%= roomId %>
                         <img src="/images/icon_copy.svg" alt="Copiar">
                     </div>
-                    <a href="#" class="button">
+                    <a href="/create-pass" class="button">
                         <img src="/images/icon_usersF.svg" alt="criar sala">
                         Criar sala
                     </a>
@@ -38,7 +38,7 @@
             <main>
                 <section id="question-form">
                     <h2>Faça sua pergunta</h2>
-                    <form action="">
+                    <form action="/question/create/<%= roomId %>" method="POST">
                         <label for-id="question" class="sr-only">O que você quer perguntar?</label>
                         <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
 
@@ -55,86 +55,52 @@
                 <section id="questions">
                     <h2 class="sr-only">Perguntas da comunidade</h2>
                     <div class="questions">
-                        
-                        <div class="question-wrapper">
-                            <div class="question-content">
-                                <div class="user">
-                                    <img src="/images/user.svg" alt="user">
-                                </div>
-                                <div class="question">
-                                    <p>Qual a diferença entre const, var e let no js?</p>
-                                </div>
-                            </div>
-                            <div class="actions">
-                                <a href="#" class="check" data-id="2">
-                                    <img src="/images/icon_check.svg" alt="Marcar como lido">
-                                    Marcar como lida
-                                </a>
-                                <a href="#" class="delete" data-id="2">
-                                    <img src="/images/icon_trash.svg" alt="Excluir">
-                                    Excluir
-                                </a>
-                            </div>
-                        </div>
 
-                        <div class="question-wrapper">
-                            <div class="question-content">
-                                <div class="user">
-                                    <img src="/images/user.svg" alt="user">
-                                </div>
-                                <div class="question">
-                                    <p>Qual a diferença entre const, var e let no js?</p>
-                                </div>
-                            </div>
-                            <div class="actions">
-                                <a href="#" class="check" data-id="3">
-                                    <img src="/images/icon_check.svg" alt="Marcar como lido">
-                                    Marcar como lida
-                                </a>
-                                <a href="#" class="delete" data-id="3">
-                                    <img src="/images/icon_trash.svg" alt="Excluir">
-                                    Excluir
-                                </a>
-                            </div>
-                        </div>
+                        <% if(isNoQuestions) { %>
+                            <%- include('parts/no-question') %>
+                        <% } %>
 
-                        <div class="question-wrapper">
-                            <div class="question-content">
-                                <div class="user">
-                                    <img src="/images/user.svg" alt="user">
+                        <% questions.forEach(question => { %>
+                            <div class="question-wrapper">
+                                <div class="question-content">
+                                    <div class="user">
+                                        <img src="/images/user.svg" alt="user">
+                                    </div>
+                                    <div class="question">
+                                        <p><%= question.title %></p>
+                                    </div>
                                 </div>
-                                <div class="question">
-                                    <p>Como utilizar o context no react?</p>
+                                <div class="actions">
+                                    <a href="#" class="check" data-id="<%= question.id %>">
+                                        <img src="/images/icon_check.svg" alt="Marcar como lido">
+                                        Marcar como lida
+                                    </a>
+                                    <a href="#" class="delete" data-id="<%= question.id %>">
+                                        <img src="/images/icon_trash.svg" alt="Excluir">
+                                        Excluir
+                                    </a>
                                 </div>
                             </div>
-                            <div class="actions">
-                                <a href="#" class="check" data-id="4">
-                                    <img src="/images/icon_check.svg" alt="Marcar como lido">
-                                    Marcar como lida
-                                </a>
-                                <a href="#" class="delete" data-id="4">
-                                    <img src="/images/icon_trash.svg" alt="Excluir">
-                                    Excluir
-                                </a>
-                            </div>
-                        </div>
+                        <% }); %>
 
-                        <div class="question-wrapper read">
-                            <div class="question-content">
-                                <div class="user">
-                                    <img src="/images/user.svg" alt="avatar">
+                        <% questionsRead.forEach(questionRead => { %>
+                            <div class="question-wrapper read">
+                                <div class="question-content">
+                                    <div class="user">
+                                        <img src="/images/user.svg" alt="avatar">
+                                    </div>
+                                    <div class="question">
+                                        <p><%= questionRead.title %></p>
+                                    </div>
                                 </div>
-                                <div class="question">
-                                    <p>Como utilizo API nas minhas aplicações??</p>
+                                <div class="actions">
+                                    <a href="#" class="delete" data-id="<%= questionRead.id %>">
+                                        <img src="/images/icon_trash.svg" alt="Excluir">
+                                        Excluir
+                                    </a>
                                 </div>
                             </div>
-                            <div class="actions">
-                                <a href="#" class="delete" data-id="1">
-                                    <img src="/images/icon_trash.svg" alt="Excluir">
-                                    Excluir
-                                </a>
-                            </div>
-                        </div>
+                        <% }); %>
                     </div>
                 </section>
             </main>
