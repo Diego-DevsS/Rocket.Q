@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "start": "nodemon .",
+    "start": "node .",
     "init-db": "node src/db/init.js"
   },
   "repository": {
